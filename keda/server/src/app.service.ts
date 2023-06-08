@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import * as fibonacci from 'fibonacci';
 import { bench } from './bench';
 
 @Injectable()
