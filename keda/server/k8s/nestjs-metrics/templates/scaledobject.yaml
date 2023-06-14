@@ -7,7 +7,7 @@ metadata:
 spec:
   maxReplicaCount: 5
   minReplicaCount: 1
-  pollingInterval: 15
+  pollingInterval: 1
   scaleTargetRef:
     name: nestjs-metrics
   triggers:
@@ -15,5 +15,5 @@ spec:
       metadata:
         serverAddress: http://nestjs-metrics-prometheus-server:80
         metricName: cpu_usage
-        query: sum(irate(process_cpu_seconds_total{app="nestjs-metrics"}[2m])) * 100
+        query: sum(irate(process_cpu_seconds_total{app="nestjs-metrics"}[2s])) * 100
         threshold: '50'
